@@ -1,0 +1,40 @@
+<div class="card">
+
+  <div class="card-body">
+
+    <div class="icon">
+      <i class="mdi mdi-earth mdi-24px"></i>
+    </div>
+
+    <div class="state">
+      <div class="led-status" [ngClass]="(status) ? 'publish' : 'draft'"></div>
+      <i (click)="isDown = !isDown" class="mdi mdi-dots-horizontal mdi-24px"></i>
+    </div>
+
+    <ng-container *ngIf="isDown">
+      <div class="card-tool">
+        <p (click)="publish(item)">publié l'annonce</p>
+        <p (click)="remove(item)">supprimer l'annonce</p>
+        <p (click)="show(item)">voir l'annonce</p>
+      </div>
+    </ng-container>
+
+    <div class="card-title">
+      <h6 *ngIf="item?.title">{{item?.title}}</h6>
+      <h6 *ngIf="!item?.title">Pas de titre</h6>
+    </div>
+
+    <div class="card-content">
+      <ng-content select="[post]"></ng-content>
+    </div>
+
+    <div class="card-technos">
+      <app-tag
+        [label]="item.name"
+        *ngFor="let item of item?.technos">
+      </app-tag>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,13 @@
+<div class="select-wrapper" (click)="display = !display">
+  <span class="label">{{label}}</span>
+  <i class="mdi mdi-chevron-down"></i>
+
+  <div class="list-item" *ngIf="display">
+    <ul>
+      <li (click)="selectItem(item)" *ngFor="let item of list">{{item.name}}</li>
+    </ul>
+  </div>
+
+</div>
+
+

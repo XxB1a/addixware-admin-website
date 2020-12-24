@@ -1,0 +1,31 @@
+@import '../../../../../assets/scss/variables';
+
+.label {
+  font-size: 15px;
+  font-weight: $semibold;
+  padding: 8px;
+  text-align: left;
+  color: $font-color;
+}
+
+textarea {
+  box-sizing: border-box;
+  margin-top: 10px;
+  width: 96%;
+  height: 300px;
+  margin-left: 10px;
+  border: 1px solid $gray-light;
+  background-color: $white;
+  text-align: left;
+  border-radius: $radius;
+  color: $font-color;
+  font-size: 15px;
+  padding: 8px;
+
+  &:focus {
+    box-sizing: border-box;
+    border: 1px solid $gray-light;
+    outline: none;
+  }
+
+}

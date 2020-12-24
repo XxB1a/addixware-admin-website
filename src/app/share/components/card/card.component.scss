@@ -1,0 +1,17 @@
+@import '../../../../assets/scss/helper';
+
+.card {
+
+  @extend .default_card;
+
+  &-technos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+}

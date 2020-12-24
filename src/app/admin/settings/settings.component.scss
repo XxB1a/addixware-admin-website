@@ -1,0 +1,113 @@
+@import '../../../assets/scss/variables';
+
+.block-setting {
+  box-sizing: border-box;
+  padding-top: 50px;
+  font-size: 19px;
+  font-weight: $bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.26;
+  letter-spacing: normal;
+  text-align: left;
+  color: $font-color;
+
+  display: flex;
+  flex-direction: row;
+
+  .left {
+    box-sizing: border-box;
+    flex: 2;
+  }
+
+  .right {
+    box-sizing: border-box;
+    flex: 3;
+    margin-right: 20px;
+  }
+
+  h2 {
+    margin-top: 50px;
+  }
+
+  .container {
+    box-sizing: border-box;
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+
+    .container-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .button-wrapper {
+      box-sizing: border-box;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      app-input {
+        box-sizing: border-box;
+        margin-top: 4px;
+        margin-left: -10px;
+      }
+
+      app-select {
+        box-sizing: border-box;
+        margin-top: 4px;
+        margin-right: 6px;
+      }
+
+      app-button {
+        box-sizing: border-box;
+        margin-top: -5px;
+      }
+
+    }
+
+    .users-box {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .user-card {
+        width: 80px;
+        height: 80px;
+        border-radius: 5px;
+        background-color: $white;
+        box-shadow: 0 1px 2px 0 rgba(138, 152, 172, 0.06), 0 1px 2px 0 rgba(138, 152, 172, 0.1), 0 2px 4px 0 rgba(138, 152, 172, 0.2);
+        transition: all ease 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        margin: 0 4px;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+      }
+
+    }
+
+    .user-info {
+      margin-top: 25px;
+
+      p {
+        font-weight: normal;
+        line-height: 1.8em;
+      }
+
+    }
+
+  }
+
+
+}

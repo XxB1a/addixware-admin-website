@@ -1,0 +1,193 @@
+<h1 class="title">Configuration</h1>
+
+<div class="block-setting">
+
+  <div class="left">
+
+    <h2>Groupes</h2>
+
+    <div class="container">
+
+      <div class="container-wrapper">
+        <app-action-card
+          *ngFor="let item of groups"
+          [id]="item._id"
+          [label]="item.name"
+          (removeData)="removeGroup($event)">
+        </app-action-card>
+      </div>
+
+      <div class="button-wrapper">
+
+        <app-input
+          name="group"
+          type="text"
+          placeholder="Nom du groupe"
+          id="group"
+          icon="account-group"
+          [validators]="[]"
+          (val)="groupFOrm($event)">
+        </app-input>
+
+        <app-button
+          type="btn-success"
+          label="Ajouter"
+          (valid)="addGroup()">
+        </app-button>
+
+      </div>
+
+    </div>
+
+    <h2>Technos</h2>
+
+    <div class="container">
+
+      <div class="container-wrapper">
+        <app-action-card
+          *ngFor="let item of techs"
+          [id]="item._id"
+          [label]="item.name"
+          (removeData)="removeTech($event)">
+        </app-action-card>
+      </div>
+
+      <div class="button-wrapper">
+
+        <app-input
+          name="tech"
+          type="text"
+          placeholder="Nom de la techno"
+          id="tech"
+          icon="language-typescript"
+          [validators]="[]"
+          (val)="techFOrm($event)">
+        </app-input>
+
+        <app-button
+          type="btn-success"
+          label="Ajouter"
+          [disabled]="false"
+          (valid)="addTech()">
+        </app-button>
+
+      </div>
+
+    </div>
+
+    <h2>Hooks</h2>
+
+    <div class="container">
+
+      <div class="container-wrapper">
+        <app-action-card
+          *ngFor="let item of hooks"
+          [id]="item._id"
+          [label]="item.url"
+          (removeData)="removeHook($event)">
+        </app-action-card>
+      </div>
+
+      <div class="button-wrapper">
+
+        <app-input
+          name="group"
+          type="text"
+          placeholder="Nom du hook"
+          id="hook"
+          icon="account-group"
+          [validators]="[]"
+          (val)="hookFOrm($event)">
+        </app-input>
+
+        <app-select
+          [list]="protocols"
+          (selected)="selectProtocol($event)"
+          label="Protocol">
+        </app-select>
+
+        <app-select
+          [list]="groups"
+          (selected)="selectGroup($event)"
+          label="Groupe">
+        </app-select>
+
+        <app-button
+          type="btn-success"
+          label="Ajouter"
+          [disabled]="isDisabled"
+          (valid)="addHook()">
+        </app-button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="right">
+
+    <h2>Users</h2>
+
+    <div class="container">
+
+      <div class="button-wrapper" style="margin-bottom: 20px;">
+
+        <app-input
+          name="fullname"
+          type="text"
+          placeholder="Nom et prénom"
+          id="fullname"
+          icon="account-group"
+          [validators]="[]"
+          (val)="formState($event)">
+        </app-input>
+
+        <app-input
+          name="email"
+          type="text"
+          placeholder="Email"
+          id="email"
+          icon="account-group"
+          [validators]="[]"
+          (val)="formState($event)">
+        </app-input>
+
+        <app-select
+          [list]="groups"
+          (selected)="selectGroup($event)"
+          label="Groupe">
+        </app-select>
+
+        <app-button
+          type="btn-success"
+          label="Ajouter un utilisateur"
+          (valid)="addUser()">
+        </app-button>
+
+      </div>
+
+      <div class="users-box">
+        <div class="user-card"
+             (click)="selectedUser(user)"
+             [ngStyle]="{'background-color': generateBackground(user._id)}"
+             *ngFor="let user of users">
+          {{initial(user)}}
+        </div>
+      </div>
+
+      <div class="user-info" *ngIf="user">
+        <p>Nom d'utilisateur: <strong>{{user?.fullname}}</strong></p>
+        <p>Email: <strong>{{user?.email}}</strong></p>
+        <p>Groupe(s):
+          <ng-container *ngFor="let group of user?.groups">
+            <strong> {{group.name}}</strong>
+          </ng-container>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

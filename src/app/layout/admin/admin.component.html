@@ -1,0 +1,24 @@
+<div class="admin-nav">
+
+  <div class="nav-logo">
+    <img src="../../../assets/img/logo.png" alt="">
+  </div>
+
+  <ul class="nav-list">
+    <li class="nav-list-item" *ngFor="let item of navLists" routerLinkActive="active">
+      <a class="nav-list-item-link" [routerLink]="item.route" >
+        <i class="mdi mdi-{{item.icon}} mdi-24px"></i>
+      </a>
+    </li>
+  </ul>
+
+</div>
+
+<div class="layout-container">
+  <router-outlet></router-outlet>
+</div>
+
+
+<a routerLink="creation" class="btn-flat">
+  <i class="mdi mdi-plus"></i>
+</a>

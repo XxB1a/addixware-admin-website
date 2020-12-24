@@ -1,0 +1,19 @@
+@import '../../../assets/scss/helper';
+@import '../../../assets/scss/variables';
+
+:host {
+
+  position: relative;
+
+  .card-container {
+    @extend .default_card-container;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.6em;
+    color: $font-color;
+  }
+
+}

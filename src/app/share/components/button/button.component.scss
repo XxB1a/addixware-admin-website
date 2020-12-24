@@ -1,0 +1,28 @@
+@import '../../../../assets/scss/variables';
+
+.btn {
+  width: auto;
+  padding: 0 15px;
+  height: 40px;
+  line-height: 30px;
+  margin-top: 16px;
+  border: 1px solid $gray-light;
+  border-radius: $radius;
+  font-size: 14px;
+  transition: all ease 0.3s;
+
+  &-success {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+}
+

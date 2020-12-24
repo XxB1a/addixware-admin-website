@@ -1,0 +1,70 @@
+@import '../../../../assets/scss/helper';
+@import '../../../../assets/scss/variables';
+
+.alert {
+  min-width: 150px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: $radius;
+  transition: all ease 0.2s;
+  @extend .shadow-1;
+
+  &:hover {
+    transition: all ease 0.2s;
+    @extend .shadow-2;
+  }
+
+  &-success {
+    background-color: lighten($success, 15%);
+    border-color: lighten($success, 10%);
+    color: darken($success, 15%);
+  }
+
+  &-warning {
+    background-color: lighten($partial-error, 15%);
+    border-color: lighten($partial-error, 10%);
+    color: darken($partial-error, 15%);
+  }
+
+  &-danger {
+    background-color: lighten($error, 15%);
+    border-color: lighten($error, 10%);
+    color: darken($error, 15%);
+  }
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+
+  i {
+    padding-right: 5px;
+    vertical-align: middle;
+    font-size: 24px;
+  }
+
+  .close-alert {
+    -webkit-appearance: none;
+    position: relative;
+    float: right;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    background: 0 0;
+    font-size: 21px;
+    line-height: 1;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+    filter: alpha(opacity=40);
+    opacity: .4;
+
+    &:hover {
+      filter: alpha(opacity=70);
+      opacity: .7;
+    }
+
+  }
+
+}

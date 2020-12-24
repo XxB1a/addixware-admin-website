@@ -1,0 +1,143 @@
+<div class="notif-position">
+  <app-alert
+    [displayed]="displayNotif"
+    [alert]="alert">
+  </app-alert>
+</div>
+
+<div class="content-container">
+
+  <h2>Créer une nouvelle publication</h2>
+
+  <div class="toolbar">
+
+    <app-select
+      [list]="posts"
+      (selected)="selectPosts($event)"
+      label="Type de post">
+    </app-select>
+
+    <app-select
+      [list]="groups"
+      (selected)="selectGroup($event)"
+      label="Groupe">
+    </app-select>
+
+    <div class="block-title">
+      <app-input
+        name="title"
+        type="text"
+        placeholder="Titre de la publication"
+        id="title"
+        icon="format-title"
+        [validators]="[]"
+        (val)="stateForm($event)">
+      </app-input>
+    </div>
+
+    <app-button
+      type="btn-success"
+      label="Sauvegarder"
+      [disabled]="isDisabled"
+      (valid)="saveData()">
+    </app-button>
+
+  </div>
+
+  <div class="editor-container">
+
+    <div class="editor">
+      <quill-editor
+        [styles]="{height: '68vh'}"
+        [formControl]="form.controls['editors']">
+      </quill-editor>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="meta-container">
+
+  <h2>Meta données</h2>
+
+  <ng-container *ngIf="type==='annonces'">
+
+    <div class="block-info">
+      <app-select
+        [list]="techs"
+        (selected)="selectTechs($event)"
+        label="Technos">
+      </app-select>
+
+      <div class="block-recap">
+        <app-tag
+          [label]="item.name"
+          [isClosable]="true"
+          (remove)="rmTech($event)"
+          *ngFor="let item of technos">
+        </app-tag>
+      </div>
+
+    </div>
+
+    <div class="block-info">
+      <app-input
+        name="location"
+        type="text"
+        placeholder="Localisation"
+        id="location"
+        icon="account-group"
+        [validators]="[]"
+        (val)="stateForm($event)">
+      </app-input>
+    </div>
+
+    <div class="block-info">
+      <app-input
+        name="salary"
+        type="text"
+        placeholder="Salaire"
+        id="salary"
+        icon="account-group"
+        [validators]="[]"
+        (val)="stateForm($event)">
+      </app-input>
+    </div>
+
+    <div class="block-info">
+      <app-select
+        [list]="contract"
+        (selected)="selectContract($event)"
+        label="Type de contrat">
+      </app-select>
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="type==='blog'">
+
+    <div class="block-info">
+      <app-input
+        name="tags"
+        type="text"
+        placeholder="Tags"
+        id="tags"
+        icon="account-group"
+        [validators]="[]"
+        (val)="tagForm($event)">
+      </app-input>
+    </div>
+
+    <div class="block-info">
+      <app-textarea
+        label="Ajouter une description: "
+        (val)="stateForm($event)"
+        [name]="'description'">
+      </app-textarea>
+    </div>
+
+  </ng-container>
+
+
+</div>

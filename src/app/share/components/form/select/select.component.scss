@@ -1,0 +1,79 @@
+@import '../../../../../assets/scss/helper';
+@import '../../../../../assets/scss/variables';
+
+.select-wrapper {
+
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+
+  @extend .wrapper-config;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .label {
+    box-sizing: border-box;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 8px;
+    margin-left: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: $font-color;
+    flex-basis: 90%;
+  }
+
+  .mdi {
+    padding-right: 8px;
+  }
+
+  .list-item {
+    position: absolute;
+    min-height: 90px;
+    min-width: 130px;
+    height: auto;
+    width: 100%;
+    top: 45px;
+    box-sizing: border-box;
+    padding: 8px;
+    background-color: $white;
+    border: 1px solid $gray-light;
+    z-index: 30000;
+
+    ul {
+      margin: 0;
+      list-style: none;
+
+      li {
+        height: 30px;
+        line-height: 30px;
+        font-size: 15px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        text-align: left;
+        padding: 8px;
+        color: $font-color;
+        transition: all ease 0.3s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $gray-light;
+          transition: all ease 0.3s;
+        }
+
+      }
+
+    }
+
+  }
+
+}

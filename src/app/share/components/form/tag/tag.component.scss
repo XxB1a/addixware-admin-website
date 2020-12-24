@@ -1,0 +1,19 @@
+@import '../../../../../assets/scss/variables';
+
+.tags {
+  border: 1px solid $primary-border;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border-radius: $tag-radius;
+  padding: 6px 12px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-color: $primary;
+  color: $white;
+
+  .mdi:hover {
+    cursor: pointer;
+  }
+
+}

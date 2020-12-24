@@ -1,0 +1,33 @@
+// base color
+$white: #fff;
+$black: #000;
+$success: #5cb85c;
+$error: #ff7c72;
+$partial-error: #ffd740;
+
+// theme color
+$primary: #5c6ccd;
+$primary-accent: lighten($primary, 10%);
+$primary-border: #485ac7;
+
+// gray color
+$smooth: #9C98AB;
+$gray-light: #cecece;
+
+// font color
+$font-color: #4d4f5c;
+
+// font size
+$ultralight: 100;
+$thin: 200;
+$light: 300;
+$regular: 400;
+$medium: 400;
+$semibold: 500;
+$bold: 600;
+$heavy: 800;
+
+// config element
+$radius: 5px;
+$tag-radius: 20px;
+$card-radius: .25rem;

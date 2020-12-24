@@ -1,0 +1,49 @@
+@import '../../../../../assets/scss/helper';
+@import '../../../../../assets/scss/variables';
+
+.input-wrapper {
+
+  @extend .wrapper-config;
+
+  display: flex;
+  flex-direction: row;
+
+  .input-label {
+    box-sizing: border-box;
+    height: 40px;
+    margin-right: 8px;
+    margin-left: 12px;
+    color: $font-color;
+  }
+
+  input {
+    box-sizing: border-box;
+    background-color: #fff;
+    border: none;
+    width: auto;
+    font-size: 15px;
+    flex-basis: 90%;
+
+    &:focus {
+      box-sizing: border-box;
+      border: none;
+      outline: none;
+    }
+
+  }
+
+  &-active {
+    box-shadow: 4px 4px 16px -5px rgba(125,121,121,0.75);
+    -webkit-box-shadow: 4px 4px 16px -5px rgba(125,121,121,0.75);
+    -moz-box-shadow: 4px 4px 16px -5px rgba(125,121,121,0.75);
+    transition: all ease 0.3s;
+  }
+
+  .error-label {
+    position: absolute;
+    bottom: -30px;
+    font-size: 11px;
+    color: $error;
+  }
+
+}

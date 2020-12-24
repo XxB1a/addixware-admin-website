@@ -1,0 +1,50 @@
+<main class="login">
+
+  <section class="left"></section>
+
+  <section class="right">
+
+    <h1 class="title">Addixware</h1>
+    <h2 class="subtitle">Entrez vos nom d'utilisateur et votre mot de passe afin de vous connecter</h2>
+
+    <form class="login-form">
+
+      <app-input
+        name="email"
+        type="text"
+        placeholder="Nom d'utilisateur (email)"
+        id="email"
+        icon="account"
+        [validators]="emailValidator"
+        (val)="logForm($event)">
+      </app-input>
+
+      <app-input
+        name="password"
+        type="password"
+        placeholder="Mot de passe"
+        id="password"
+        icon="lock"
+        [validators]="validators"
+        (val)="logForm($event)">
+      </app-input>
+
+      <app-button
+        type="btn-success"
+        label="Se connecter"
+        (valid)="senForm()">
+      </app-button>
+
+      <div class="reset" (click)="resetPass()">
+        mot de passe oublié
+      </div>
+
+      <span class="error">
+        {{error}}
+      </span>
+
+    </form>
+
+  </section>
+
+</main>

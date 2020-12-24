@@ -1,0 +1,6 @@
+<ng-container *ngIf="displayed">
+  <div class="alert alert-{{alert.type}}" role="alert">
+    <button type="button" (click)="close()" class="close-alert">×</button>
+    <p>{{alert.message}}</p>
+  </div>
+</ng-container>

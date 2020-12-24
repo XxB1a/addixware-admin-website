@@ -1,0 +1,20 @@
+<div class="input-wrapper" [formGroup]="group">
+
+  <label
+    [for]="id"
+    class="input-label">
+    <i class="mdi mdi-{{icon}}"></i>
+  </label>
+
+  <input
+    [formControl]="control"
+    [id]="id"
+    [value]="initialValue"
+    [type]="type"
+    [placeholder]="placeholder">
+
+  <div *ngIf="control.errors && !control.pristine" class="error-label">
+    Le champ n'est pas valide
+  </div>
+
+</div>

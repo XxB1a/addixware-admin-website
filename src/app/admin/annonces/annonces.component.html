@@ -1,0 +1,41 @@
+<div class="card-container">
+
+  <div class="title-container"><h2>Liste des annonces</h2></div>
+
+  <div class="scroll-view">
+    <app-card
+      *ngFor="let item of offers"
+      (view)="showSideBar($event)"
+      (publishEvent)="publish($event)"
+      (removeEvent)="remove($event)"
+      [item]="item">
+      <ng-container post>
+        <p>localisation: <b>{{item.location}}</b></p>
+        <p>salaire: <b>{{item.salary}}</b></p>
+        <p>contract: <b>{{item.contract}}</b></p>
+        <p>agence: <b>{{item.group.name}}</b></p>
+        <p>Date de création: <b>{{moment(item.createdAt).fromNow()}}</b></p>
+      </ng-container>
+    </app-card>
+  </div>
+
+</div>
+
+<div class="right-side" #sidebar>
+
+  <div class="tool-bar">
+    <div class="label" *ngIf="title">{{title}}</div>
+    <div class="tool">
+      <button class="button-save" (click)="update()">Mettre à jours</button>
+      <button class="button-close" (click)="close()">Fermer</button>
+    </div>
+  </div>
+
+  <div class="content-box">
+    <quill-editor
+      [styles]="{height: '78vh'}"
+      [formControl]="form.controls['editors']">
+    </quill-editor>
+  </div>
+
+</div>

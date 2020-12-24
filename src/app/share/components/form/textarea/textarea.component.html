@@ -1,0 +1,11 @@
+<div class="textarea-wrapper" [formGroup]="group">
+  <label>
+    <span class="label">{{label}}</span>
+    <textarea
+      [id]="id"
+      (focus)="isFocused = true"
+      (focusout)="isFocused = false"
+      [formControl]="control">
+    </textarea>
+  </label>
+</div>

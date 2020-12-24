@@ -1,0 +1,198 @@
+@import 'variables';
+
+.wrapper-config {
+  position: relative;
+  box-sizing: border-box;
+  width: auto;
+  border: 1px solid $gray-light;
+  margin: 10px 10px 15px;
+  height: 40px;
+  line-height: 40px;
+  background-color: $white;
+  text-align: left;
+  border-radius: $radius;
+  transition: all ease 0.3s;
+}
+
+.shadow-1 {
+  box-shadow: 0 1px 3px rgba($black, .12), 0 1px 2px rgba($black, .24);
+}
+
+.shadow-2 {
+  box-shadow: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
+}
+
+.default_card-container {
+
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .title-container {
+    flex-basis: 100%;
+
+    h2 {
+      position: fixed;
+      margin-left: 20px;
+      font-size: 23px;
+      font-weight: $bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.04;
+      letter-spacing: normal;
+      text-align: left;
+      color: $font-color;
+    }
+
+  }
+
+  .scroll-view {
+    padding-top: 36px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    app-card {
+      flex-basis: 25%;
+    }
+
+  }
+
+}
+
+.default_card {
+  position: relative;
+  width: auto;
+  min-height: 350px;
+  height: auto;
+  margin: 14px;
+  padding: 24px;
+  box-sizing: border-box;
+  background-color: $white;
+  background-clip: border-box;
+  border: .0625rem solid rgba(0, 0, 0, .05);
+  border-radius: $card-radius;
+  box-shadow: 0 1px 4px rgba(50, 50, 93, .1);
+  transition: all ease 0.2s;
+
+  &:hover {
+    box-shadow: 0 15px 35px rgba(50, 50, 93, .1), 0 5px 15px rgba(0, 0, 0, .07);
+    transition: all ease 0.2s;
+  }
+
+  .card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+
+    .card-tool {
+      position: absolute;
+      box-shadow: 0 1px 4px rgba(50, 50, 93, .2);
+      border-radius: .25rem;
+      min-width: 120px;
+      min-height: 80px;
+      width: auto;
+      right: 24px;
+      top: 50px;
+      padding: 8px;
+      box-sizing: border-box;
+      background-color: $white;
+
+      p {
+        height: 40px;
+        line-height: 40px;
+        padding: 0 24px;
+        font-size: 13px;
+        font-weight: 500;
+        color: $font-color;
+
+        &:hover {
+          background-color: $gray-light;
+        }
+
+      }
+
+    }
+
+    .card-content {
+      box-sizing: border-box;
+      width: 100%;
+      margin-top: 10px;
+      min-height: 60px;
+      height: auto;
+    }
+
+    .icon {
+      box-sizing: border-box;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #2643e9;
+      background-color: rgba(138, 152, 235, .5);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .state {
+      position: absolute;
+      right: 24px;
+      top: 24px;
+
+      display: flex;
+      flex-direction: row;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      .mdi {
+        margin-left: 16px;
+        margin-top: -3px;
+        background-clip: border-box;
+        border: .0625rem solid rgba(0, 0, 0, .05);
+        border-radius: .25rem;
+        background-color: rgba(138, 152, 235, .5);
+        color: #4e545c;
+        padding: 0 6px;
+      }
+
+      .led-status {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+
+        &.publish {
+          background-color: #03cd89;
+        }
+
+        &.draft {
+          background-color: #db3832;
+        }
+
+      }
+
+    }
+
+  }
+
+  .card-title {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #5e72e4;
+  }
+
+}
